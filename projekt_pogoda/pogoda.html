@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stacja pogodowa</title>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <div>
+            <span class="subtitle">WEATHER MONITORING SYSTEM</span>
+
+            <h1>Stacja pogodowa</h1>
+        </div>
+
+    </header>
+
+
+    <section class="panel">
+
+        <h2>Status systemu</h2>
+
+        <p id="status">
+            Uruchamianie aplikacji...
+        </p>
+
+    </section>
+
+
+    <section class="cards">
+
+        <div class="card">
+            <span>Liczba pomiarów</span>
+            <strong id="liczba">0</strong>
+        </div>
+
+        <div class="card">
+            <span>Minimalna temperatura</span>
+            <strong id="minimum">-- °C</strong>
+        </div>
+
+        <div class="card">
+            <span>Data minimum</span>
+            <strong id="dataMinimum">--</strong>
+        </div>
+
+    </section>
+
+
+    <section class="panel">
+
+        <h2>Wszystkie pomiary</h2>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Data</th>
+                        <th>Temperatura</th>
+                        <th>Wiatr</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tabela"></tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <section class="panel">
+
+        <h2>Wyszukiwanie pomiarów</h2>
+
+        <label for="prog">
+            Temperatura większa niż:
+        </label>
+
+        <div class="search">
+
+            <input
+                type="number"
+                id="prog"
+                step="0.1"
+                placeholder="Np. 15"
+            >
+
+            <button id="szukaj">
+                Szukaj
+            </button>
+
+        </div>
+
+        <p id="wynikInfo">
+            Wpisz próg temperatury.
+        </p>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Data</th>
+                        <th>Temperatura</th>
+                        <th>Wiatr</th>
+                    </tr>
+                </thead>
+
+                <tbody id="wyniki"></tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script>
+var Module = {
+    czyGotowy: false,
+    daneWczytane: false,
+
+    onRuntimeInitialized: function() {
+        Module.czyGotowy = true;
+    }
+};
+</script>
+
+<script src="pogoda.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
